@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper rendering and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transient House Booking</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="frontend/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar - Edit logo text and menu items as needed -->
+    <nav class="navbar">
+        <div class="nav-header">
+            <div class="logo">Baguio Transient Houses</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="frontend/about.html">About Us</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="frontend/calendar.html">Availability</a></li>
+            <li><a href="#booking">Book Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section - Edit welcome text and background image in CSS -->
+    <section id="home" class="hero">
+        <div class="hero-content" id="heroContent">
+            <h1>Experience Baguio</h1>
+            <p>Morning Star Homes & Leonila Hill Homes</p>
+            <a href="#booking" class="cta-button">Book Your Escape</a>
+        </div>
+    </section>
+
+    <!-- Image Carousel - Replace image URLs with your own room images -->
+    <section id="rooms" class="carousel-section">
+        <h2>Our Rooms</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <!-- Replace these image URLs with your actual room images -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop" alt="Deluxe Room" draggable="false">
+                    <div class="slide-caption">Deluxe Room</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&h=600&fit=crop" alt="Standard Room" draggable="false">
+                    <div class="slide-caption">Standard Room</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Family Room" draggable="false">
+                    <div class="slide-caption">Family Room</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Suite Room" draggable="false">
+                    <div class="slide-caption">Suite Room</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&h=600&fit=crop" alt="Mountain Villa" draggable="false">
+                    <div class="slide-caption">Mountain Villa</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1518602164578-cd0074062767?w=800&h=600&fit=crop" alt="Mountain Cabin" draggable="false">
+                    <div class="slide-caption">Mountain Cabin</div>
+                </div>
+            </div>
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+        </div>
+    </section>
+
+    <!-- Room Types Grid - Edit room details and images here -->
+    <section class="image-grid-section">
+        <h2>Our Room Types</h2>
+        
+        <!-- Morning Star Homes Rooms -->
+        <h3 class="location-subtitle">Morning Star Homes</h3>
+        <div class="image-grid">
+            <!-- Deluxe Room -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop" alt="Deluxe Room" draggable="false">
+                <div class="grid-content">
+                    <h3>Deluxe Room</h3>
+                    <p>Spacious room with premium amenities</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-bed"></i> King Size Bed</li>
+                        <li><i class="fas fa-tv"></i> Smart TV</li>
+                        <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                        <li><i class="fas fa-bath"></i> Private Bathroom</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Standard Room -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&h=600&fit=crop" alt="Standard Room" draggable="false">
+                <div class="grid-content">
+                    <h3>Standard Room</h3>
+                    <p>Comfortable room for your stay</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-bed"></i> Queen Size Bed</li>
+                        <li><i class="fas fa-tv"></i> Cable TV</li>
+                        <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                        <li><i class="fas fa-bath"></i> Private Bathroom</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Family Room -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Family Room" draggable="false">
+                <div class="grid-content">
+                    <h3>Family Room</h3>
+                    <p>Perfect for families and groups</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-bed"></i> Multiple Beds</li>
+                        <li><i class="fas fa-tv"></i> Smart TV</li>
+                        <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                        <li><i class="fas fa-bath"></i> Private Bathroom</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Suite Room -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Suite Room" draggable="false">
+                <div class="grid-content">
+                    <h3>Suite Room</h3>
+                    <p>Luxury suite with separate living area</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-bed"></i> King Size Bed</li>
+                        <li><i class="fas fa-couch"></i> Living Room</li>
+                        <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                        <li><i class="fas fa-bath"></i> Jacuzzi Bathroom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Leonila Hill Homes Rooms -->
+        <h3 class="location-subtitle">Leonila Hill Homes</h3>
+        <div class="image-grid">
+            <!-- Beachfront Villa - renamed to Mountain Villa -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&h=600&fit=crop" alt="Mountain Villa" draggable="false">
+                <div class="grid-content">
+                    <h3>Mountain Villa</h3>
+                    <p>Exclusive villa with panoramic mountain views (Capacity: 5 persons)</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-home"></i> Private Villa</li>
+                        <li><i class="fas fa-mountain"></i> Mountain Views</li>
+                        <li><i class="fas fa-utensils"></i> Full Kitchen</li>
+                        <li><i class="fas fa-hot-tub"></i> Private Jacuzzi</li>
+                        <li><i class="fas fa-users"></i> Sleeps 5</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Mountain Cabin -->
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1518602164578-cd0074062767?w=800&h=600&fit=crop" alt="Mountain Cabin" draggable="false">
+                <div class="grid-content">
+                    <h3>Mountain Cabin</h3>
+                    <p>Cozy cabin with panoramic mountain views (Capacity: 5 persons)</p>
+                    <ul class="room-features">
+                        <li><i class="fas fa-mountain"></i> Mountain View</li>
+                        <li><i class="fas fa-fire"></i> Fireplace</li>
+                        <li><i class="fas fa-mug-hot"></i> Private Deck</li>
+                        <li><i class="fas fa-door-open"></i> Separate Entrance</li>
+                        <li><i class="fas fa-users"></i> Sleeps 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations Section -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2>Our Locations</h2>
+            <p>Choose from our two beautiful properties, each offering unique amenities and experiences</p>
+            
+            <div class="locations-container">
+                <!-- Location 1 -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=500&fit=crop" alt="Transient House Location 1" draggable="false">
+                    </div>
+                    <div class="location-details">
+                        <h3>Morning Star Homes</h3>
+                        <p class="location-address"><i class="fas fa-map-marker-alt"></i> #6 Unit 1 Morning Star Road, Lower Lourdes, Baguio City</p>
+                        <div class="location-description">
+                            <p>Our Morning Star property offers stunning mountain views in a quiet neighborhood. Perfect for vacationers looking to enjoy the cool Baguio climate.</p>
+                            <h4>Amenities</h4>
+                            <ul class="amenities-list">
+                                <li><i class="fas fa-home"></i> Cozy Living Space</li>
+                                <li><i class="fas fa-mountain"></i> Mountain Views</li>
+                                <li><i class="fas fa-utensils"></i> Outdoor BBQ Area</li>
+                                <li><i class="fas fa-coffee"></i> Nearby Cafés</li>
+                                <li><i class="fas fa-parking"></i> Free Parking</li>
+                                <li><i class="fas fa-wifi"></i> High-Speed WiFi</li>
+                            </ul>
+                        </div>
+                        <a href="#booking" class="location-cta">Book This Location</a>
+                    </div>
+                </div>
+                
+                <!-- Location 2 -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop" alt="Transient House Location 2" draggable="false">
+                    </div>
+                    <div class="location-details">
+                        <h3>Leonila Hill Homes</h3>
+                        <p class="location-address"><i class="fas fa-map-marker-alt"></i> #67 Evangelista St., Leonila Hill, Baguio City</p>
+                        <div class="location-description">
+                            <p>Nestled in the mountains, this tranquil retreat offers cool climate and spectacular mountain views. Features 2 spacious rooms, each accommodating up to 5 persons. Ideal for those seeking peace and relaxation.</p>
+                            <h4>Amenities</h4>
+                            <ul class="amenities-list">
+                                <li><i class="fas fa-hot-tub"></i> Outdoor Hot Tub</li>
+                                <li><i class="fas fa-mountain"></i> Hiking Trails</li>
+                                <li><i class="fas fa-fire"></i> Fireplace</li>
+                                <li><i class="fas fa-coffee"></i> Mountain Café</li>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                <li><i class="fas fa-binoculars"></i> Scenic Views</li>
+                            </ul>
+                        </div>
+                        <a href="#booking" class="location-cta">Book This Location</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Stay</h2>
+            <p>Fill out our booking form to request a reservation at one of our locations. We'll get back to you as soon as possible to confirm availability.</p>
+            
+            <div class="booking-container">
+                <div class="booking-cta">
+                    <i class="fas fa-calendar-check booking-icon"></i>
+                    <h3>Ready to make a reservation?</h3>
+                    <p>Click the button below to fill out our booking form and request your stay. Be sure to select your preferred location!</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdblHgkPgr4JjN4iK2dJS7-Tlp5aLqsE85jJeFhEPmi8-a9vw/viewform?usp=sharing" class="booking-button" target="_blank">
+                        <i class="fas fa-clipboard-list"></i> Open Booking Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Update contact information here -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <!-- Morning Star Homes Location -->
+                <div class="location-contact">
+                    <h3>Morning Star Homes</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>#6 Unit 1 Morning Star Road, Lower Lourdes, Baguio City</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 8900</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <p><a href="https://m.me/YourFacebookPageUsername" target="_blank" class="messenger-link">Message us on Messenger</a></p>
+                    </div>
+                </div>
+                
+                <!-- Leonila Hill Homes Location -->
+                <div class="location-contact">
+                    <h3>Leonila Hill Homes</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>#67 Evangelista St., Leonila Hill, Baguio City</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 8901</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <p><a href="https://m.me/YourFacebookPageUsername" target="_blank" class="messenger-link">Message us on Messenger</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Map Section -->
+            <div class="locations-map">
+                <h3>Find Us On The Map</h3>
+                <div class="map-grid">
+                    <!-- Morning Star Homes Map -->
+                    <div class="map-item">
+                        <h4>Morning Star Homes</h4>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.0708566390453!2d120.5964803!3d16.4196459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a1a16e014aa1%3A0x48742520e2364e45!2sCity%20Light%20Hotel%20North!5e0!3m2!1sen!2sph!4v1723432684698!5m2!1sen!2sph" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="map-directions">
+                            <a href="https://maps.app.goo.gl/9HfHFJ5JipBFQpZBA" target="_blank" class="directions-link">
+                                <i class="fas fa-directions"></i> Directions to Morning Star Homes
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <!-- Leonila Hill Homes Map -->
+                    <div class="map-item">
+                        <h4>Leonila Hill Homes</h4>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.130638226771!2d120.59833717497833!3d16.41641833401127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a15a538e71b9%3A0xed348bcfa56b0b2!2s%2367%20Evangelista%2C%20Baguio%2C%20Benguet!5e0!3m2!1sen!2sph!4v1723423948975!5m2!1sen!2sph" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="map-directions">
+                            <a href="https://maps.app.goo.gl/fwFsAmQcxfNckH1X9" target="_blank" class="directions-link">
+                                <i class="fas fa-directions"></i> Directions to Leonila Hill Homes
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Update social media links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/YourFacebookPageUsername" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://m.me/YourFacebookPageUsername" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Update copyright information -->
+    <footer class="footer">
+        <p>&copy; 2024 Baguio Transient Houses. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for website functionality -->
+    <script src="frontend/script.js"></script>
+</body>
+</html> 

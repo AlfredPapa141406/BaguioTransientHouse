@@ -1,0 +1,15 @@
+Set up the trigger:
+Click "Save" (disk icon)
+Click "Triggers" (clock icon in left sidebar)
+Click "Add Trigger" (bottom right)
+For "Choose which function to run", select "onFormSubmit"
+For "Select event source", choose "From spreadsheet"
+For "Select event type", choose "On form submit"
+Click "Save"
+Authorize the script:
+You'll need to grant permission to the script to send emails
+Follow the prompts to authorize
+Now, whenever someone submits a booking:
+The primary email (alfredpapa1422@gmail.com) will receive the notification as the main recipient
+The other two emails (alfredpapa141406@gmail.com and ragnarok0q@gmail.com) will be CC'd
+All three accounts will receive the same detailed notification with the booking information
