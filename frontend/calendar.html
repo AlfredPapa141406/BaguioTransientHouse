@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Calendar - Transient House</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .calendar-section {
+            padding: 5rem 1rem;
+            background-color: #f9f9f9;
+        }
+        
+        .about-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&h=900&fit=crop&q=80') center/cover;
+            background-attachment: fixed;
+        }
+        
+        .about-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.3);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .calendar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calendar-header h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .calendar-header p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .calendar-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calendar-tab {
+            padding: 0.8rem 1.5rem;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 5px;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-tab.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+        
+        .calendar-tab:hover:not(.active) {
+            background-color: #e0e0e0;
+        }
+        
+        .calendar-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        .booking-status {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .available {
+            background-color: #2ecc71;
+        }
+        
+        .booked {
+            background-color: #e74c3c;
+        }
+        
+        .pending {
+            background-color: #f39c12;
+        }
+        
+        .room-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .room-filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 20px;
+            margin: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .room-filter-btn.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+        
+        .room-filter-btn:hover:not(.active) {
+            background-color: #e0e0e0;
+        }
+        
+        .instructions {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .instructions p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .instructions ul {
+            padding-left: 1.5rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-header">
+            <div class="logo">Baguio Transient Houses</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html#rooms">Rooms</a></li>
+            <li><a href="../index.html#locations">Locations</a></li>
+            <li><a href="calendar.html">Availability</a></li>
+            <li><a href="../index.html#booking">Book Now</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Calendar Hero Section -->
+    <section class="hero about-hero">
+        <div class="hero-content">
+            <h1>Booking Calendar</h1>
+            <p>Check room availability and upcoming reservations</p>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <h2>Room Availability</h2>
+                <p>View our booking calendar to see available dates for your stay</p>
+            </div>
+            
+            <div class="calendar-tabs">
+                <button class="calendar-tab active" data-view="month">Month View</button>
+                <button class="calendar-tab" data-view="week">Week View</button>
+                <button class="calendar-tab" data-view="agenda">Agenda View</button>
+            </div>
+            
+            <div class="room-filter">
+                <button class="room-filter-btn active" data-room="all">All Rooms</button>
+                <h3 class="filter-location">Morning Star Homes</h3>
+                <button class="room-filter-btn" data-room="deluxe">Deluxe Room</button>
+                <button class="room-filter-btn" data-room="standard">Standard Room</button>
+                <button class="room-filter-btn" data-room="family">Family Room</button>
+                <button class="room-filter-btn" data-room="suite">Suite Room</button>
+                <h3 class="filter-location">Leonila Hill Homes</h3>
+                <button class="room-filter-btn" data-room="villa">Mountain Villa</button>
+                <button class="room-filter-btn" data-room="cabin">Mountain Cabin</button>
+            </div>
+            
+            <!-- Google Calendar Embed -->
+            <iframe src="https://calendar.google.com/calendar/embed?src=d9876be87f0ac6577458ce381fa0c05dc60bdbb0f6fc0d2de42a220f05cc8268%40group.calendar.google.com&ctz=Asia%2FManila" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
+            
+            <!-- Calendar Legend -->
+            <div class="booking-status">
+                <h3>Booking Status</h3>
+                <div class="status-indicator">
+                    <div class="status-color available"></div>
+                    <span>Available</span>
+                </div>
+                <div class="status-indicator">
+                    <div class="status-color booked"></div>
+                    <span>Booked</span>
+                </div>
+                <div class="status-indicator">
+                    <div class="status-color pending"></div>
+                    <span>Pending Confirmation</span>
+                </div>
+            </div>
+            
+            <!-- Instructions -->
+            <div class="instructions">
+                <h3>How to Use This Calendar</h3>
+                <p>This calendar shows all current bookings and availability for our rooms:</p>
+                <ul>
+                    <li>Use the tabs above to switch between different calendar views</li>
+                    <li>Filter by room type using the buttons above the calendar</li>
+                    <li>Hover over an event to see more details about the booking</li>
+                    <li>Click on a date to see all bookings for that day</li>
+                </ul>
+                <p>To make a reservation, please use our <a href="../index.html#booking">booking form</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Baguio Transient Houses. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Calendar Integration -->
+    <script>
+        // Tab switching functionality
+        const calendarTabs = document.querySelectorAll('.calendar-tab');
+        const calendarIframe = document.querySelector('.calendar-iframe');
+        const baseCalendarUrl = 'https://calendar.google.com/calendar/embed?src=d9876be87f0ac6577458ce381fa0c05dc60bdbb0f6fc0d2de42a220f05cc8268%40group.calendar.google.com&ctz=Asia%2FManila&mode=';
+        
+        calendarTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                calendarTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update calendar view
+                const view = tab.getAttribute('data-view');
+                let mode;
+                switch(view) {
+                    case 'week':
+                        mode = 'WEEK';
+                        break;
+                    case 'agenda':
+                        mode = 'AGENDA';
+                        break;
+                    default:
+                        mode = 'MONTH';
+                }
+                
+                calendarIframe.src = baseCalendarUrl + mode;
+            });
+        });
+        
+        // Room filtering functionality
+        const roomFilterBtns = document.querySelectorAll('.room-filter-btn');
+        
+        roomFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                roomFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the calendar events
+                // based on room type by changing the calendar source or using
+                // custom filtering logic
+                const roomType = btn.getAttribute('data-room');
+                console.log(`Filtering for room type: ${roomType}`);
+                
+                // This would require custom Google Calendar setup
+                // with different calendars for each room type
+            });
+        });
+    </script>
+    
+    <!-- JavaScript file for mobile menu functionality -->
+    <script src="../frontend/script.js"></script>
+</body>
+</html> 

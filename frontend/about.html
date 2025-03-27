@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Transient House</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific styles for About page */
+        .about-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&h=900&fit=crop&q=80') center/cover;
+            background-attachment: fixed;
+        }
+        
+        .about-section {
+            padding: 5rem 1rem;
+        }
+        
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-section {
+            background-color: #f9f9f9;
+            padding: 5rem 1rem;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .team-header h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .team-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 1.5rem;
+        }
+        
+        .team-member-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member-info p {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #3498db;
+        }
+        
+        .values-section {
+            padding: 5rem 1rem;
+        }
+        
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .values-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .values-header h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .values-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: #666;
+        }
+        
+        .about-hero .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.3);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-header">
+            <div class="logo">Baguio Transient Houses</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html#rooms">Rooms</a></li>
+            <li><a href="../index.html#locations">Locations</a></li>
+            <li><a href="calendar.html">Availability</a></li>
+            <li><a href="../index.html#booking">Book Now</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="hero about-hero">
+        <div class="hero-content">
+            <h1>About Our Transient House</h1>
+            <p>Learn more about our story and values</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Founded in 2015, our Transient House started as a small family-owned accommodation with just 3 rooms. What began as a simple dream to provide comfortable lodging for travelers has now grown into a beloved destination for both tourists and locals alike.</p>
+                <p>Over the years, we've expanded our facilities while maintaining the warm, personalized service that has become our signature. Our dedicated team works tirelessly to ensure that every guest feels at home during their stay with us.</p>
+                <p>Located in a charming neighborhood with easy access to local attractions, our Transient House offers the perfect balance of comfort, convenience, and value. Whether you're visiting for business or pleasure, our goal is to make your stay memorable and stress-free.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=800&fit=crop" alt="Our Transient House">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="values-header">
+                <h2>Our Values</h2>
+                <p>These core principles guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Comfort</h3>
+                    <p>We believe that a good night's sleep is essential for a great experience. That's why we invest in quality mattresses, linens, and amenities to ensure your utmost comfort.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Hospitality</h3>
+                    <p>We treat every guest like family. Our friendly staff is always ready to assist you with a smile, making sure your needs are met promptly and courteously.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety</h3>
+                    <p>Your safety is our priority. We maintain strict security protocols and regularly update our facilities to ensure a secure environment for all our guests.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Cleanliness</h3>
+                    <p>We maintain the highest standards of cleanliness in all our rooms and common areas. Regular sanitization ensures a hygienic environment for your peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Baguio Transient Houses. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file for mobile menu functionality -->
+    <script src="../frontend/script.js"></script>
+</body>
+</html> 
