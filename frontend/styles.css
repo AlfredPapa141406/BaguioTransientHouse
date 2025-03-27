@@ -379,6 +379,97 @@ body {
     width: 20px;
 }
 
+/* Room Carousel Styles */
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.room-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.room-item:hover {
+    transform: translateY(-5px);
+}
+
+.carousel {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.carousel-inner {
+    border-radius: 8px 8px 0 0;
+}
+
+.carousel-item img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    margin-bottom: 0.5rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.room-content {
+    padding: 1.5rem;
+}
+
+.room-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.room-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.room-features {
+    list-style: none;
+    padding: 0;
+}
+
+.room-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.room-features li i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .room-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-item img {
+        height: 200px;
+    }
+}
+
 /* ==========================================
    Booking Form Styles
    ========================================== */
