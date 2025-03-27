@@ -42,7 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: auto;
 }
 
 /* Edit logo text style */
@@ -50,13 +50,16 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2c3e50;
+    margin-right: 2rem;
 }
 
 /* Navigation menu styles */
 .nav-links {
     display: flex;
     list-style: none;
-    transition: all 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .menu-toggle {
@@ -65,19 +68,17 @@ body {
     cursor: pointer;
     color: #2c3e50;
     transition: color 0.3s ease;
+    border: none;
+    background: none;
+    padding: 0.5rem;
 }
 
 .menu-toggle:hover {
     color: #3498db;
 }
 
-/* Hamburger menu animation */
-.menu-toggle.active i {
-    color: #3498db;
-}
-
 .nav-links li {
-    margin-left: 2rem;
+    margin: 0 1rem;
 }
 
 .nav-links a {
@@ -85,10 +86,13 @@ body {
     color: #2c3e50;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 .nav-links a:hover {
     color: #3498db;
+    background-color: rgba(52, 152, 219, 0.1);
 }
 
 /* ==========================================
@@ -97,7 +101,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&h=900&fit=crop&q=80') center/cover;
+                url('photos/herobg.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +121,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&h=900&fit=crop&q=80') center/cover;
+    background: url('photos/herobg.jpg') center/cover;
     background-attachment: fixed;
     transform: scale(1.1);
     z-index: -1;
@@ -788,57 +792,50 @@ body {
    Responsive Design
    ========================================== */
 @media (max-width: 768px) {
-    /* Mobile navigation */
     .navbar {
         padding: 1rem;
     }
-    
+
+    .nav-header {
+        width: 100%;
+    }
+
     .menu-toggle {
         display: block;
-        cursor: pointer;
-        z-index: 1001;
     }
-    
+
     .nav-links {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
+        background-color: #fff;
         flex-direction: column;
-        background-color: white;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        z-index: 999;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
-    
+
     .nav-links.active {
-        max-height: 350px;
+        display: flex;
     }
-    
+
     .nav-links li {
-        margin: 0;
+        margin: 0.5rem 0;
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid #eee;
     }
-    
+
     .nav-links a {
         display: block;
-        padding: 1rem 0;
-        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
         width: 100%;
     }
-    
-    /* Hamburger icon animation */
-    .menu-toggle i {
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-    
-    .menu-toggle.active i {
-        transform: rotate(90deg);
+
+    .nav-links a:hover {
+        background-color: rgba(52, 152, 219, 0.1);
     }
 
     /* Mobile hero section */
@@ -909,75 +906,14 @@ body {
     }
 }
 
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .navbar {
-        padding: 0.8rem;
-    }
-    
-    .logo {
-        font-size: 1.3rem;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .nav-links li {
-        margin: 0.3rem 0;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .carousel-slide img,
-    .carousel-container {
-        height: 250px;
-    }
-    
-    .grid-item img {
-        height: 200px;
-    }
-    
-    .location-image {
-        height: 200px;
-    }
-    
-    .amenities-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .map-container {
-        height: 280px;
-    }
-    
-    .booking-icon {
-        font-size: 3rem;
-    }
-    
-    .booking-cta h3 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Medium screens */
+/* Tablet and larger screens */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        padding: 0 2rem;
+    .navbar {
+        padding: 1rem 2rem;
     }
-    
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .location-card {
-        flex-direction: column;
-    }
-    
-    .location-image {
-        height: 350px;
+
+    .nav-links li {
+        margin: 0 0.5rem;
     }
 }
 
